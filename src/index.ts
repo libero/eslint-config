@@ -1,4 +1,4 @@
-export default {
+const index = {
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   extends: [
     'plugin:@typescript-eslint/recommended', // Uses the recommended rules from @typescript-eslint/eslint-plugin
@@ -10,3 +10,5 @@ export default {
     sourceType: 'module' // Allows for the use of imports
   }
 };
+// export default rules
+export default index;
