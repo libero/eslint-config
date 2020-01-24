@@ -10,5 +10,5 @@ const index = {
     sourceType: 'module' // Allows for the use of imports
   }
 };
-// export default rules
+// use this syntax so that we get module.exports when transpiled
 export = index;
