@@ -11,4 +11,4 @@ const index = {
   }
 };
 // export default rules
-export default index;
+export = index;
