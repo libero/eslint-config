@@ -9,10 +9,12 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Yarn install
+        uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Yarn Test
+        uses: borales/actions-yarn@v2.0.0
         with:
           cmd: test
 
@@ -21,10 +23,12 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Yarn build
+        uses: borales/actions-yarn@v2.0.0
         with:
           cmd: build
-      - uses: borales/actions-yarn@v2.0.0
+      - name: Yarn publish
+        uses: borales/actions-yarn@v2.0.0
         with:
           cmd: publish
         env:
