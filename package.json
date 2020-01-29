@@ -11,7 +11,8 @@
   "private": false,
   "scripts": {
     "build": "tsc",
-    "prettier": "prettier --write 'src/**/*ts'"
+    "prettier": "prettier --write 'src/**/*ts'",
+    "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^2.17.0",
