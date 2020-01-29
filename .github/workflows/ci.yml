@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - '*'
+    tags:
+      - '*'
 
 jobs:
-  test:
+  build-and-publish:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
@@ -13,22 +15,19 @@ jobs:
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install
+
+      - name: Yarn build
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build
+
       - name: Yarn Test
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: test
 
-  publish-npm:
-    needs: test
-    runs-on: ubuntu-18.04
-    if: startsWith(github.ref, 'refs/tags/') 
-    steps:
-      - uses: actions/checkout@v1
-      - name: Yarn build
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: build
       - name: Yarn publish
+        if: startsWith(github.ref, 'refs/tags/') 
         uses: borales/actions-yarn@v2.0.0
         with:
           cmd: publish
